@@ -17,13 +17,13 @@ class Corpus:
 
 def main():
     logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-    #gossip_corpus = Corpus(corpus_path = '_Article_gossiping_seg.txt')
-    #gossip_corpus.dictionary.save('gossip.dictionary')
-    #corpora.MmCorpus.serialize('gossip_corpus.mm', gossip_corpus)  # store to disk, for later use
-    #tfidf = models.TfidfModel(gossip_corpus)
-    #tfidf.save('gossip_model.tfidf')
+    gossip_corpus = Corpus(corpus_path = 'Article_gossip_seg.txt')
+    gossip_corpus.dictionary.save('gossip.dict')
+    corpora.MmCorpus.serialize('gossip_corpus.mm', gossip_corpus)  # store to disk, for later use
+    tfidf = models.TfidfModel(gossip_corpus)
+    tfidf.save('gossip_model.tfidf')
 
-    hot_gossip_corpus = Corpus(corpus_path = '_hot_Article_gossiping_seg.txt',dictionary_path = 'gossip.dict')
+    hot_gossip_corpus = Corpus(corpus_path = 'Article_gossip_hot_seg.txt',dictionary_path = 'gossip.dict')
     corpora.MmCorpus.serialize('hot_gossip_corpus.mm', hot_gossip_corpus)  # store to disk, for later use
     tfidf = models.TfidfModel(hot_gossip_corpus)
     tfidf.save('hot_gossip_model.tfidf')
