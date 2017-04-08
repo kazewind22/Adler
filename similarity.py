@@ -43,7 +43,7 @@ def main():
     model = models.word2vec.Word2Vec.load('med500.model_gossiping.bin')
 
     dict_id2title = {}
-    with open('_hot_Article_gossiping.csv') as Article:
+    with open('Article_gossip_hot.csv') as Article:
         Article.readline() #dismiss column titles
         reader = csv.reader(Article)
         count = 0
