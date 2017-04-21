@@ -21,7 +21,17 @@ $ ls Article_gossip_seg.txt
 	$ ls Article_gossip_hot_seg.txt
 
 4. Preprocess corpus
-$ python3 corpus.py
+$ python3 corpus.py --init
+$ python3 corpus.py --hot
+
+	4-1. Use --hot argument to preprocess hot gossip corpus
+	$ python3 corpus.py --hot
+
+	4-2. Use --add argument to update the corpus and dictionary
+	[Demo]
+	$ python3 extract_HatePolitics.py Article.csv
+	$ python3 segment Article_HatePolitics.csv
+	$ python3 corpus.py --add Article_HatePolitics
 
 5. Train word2vec model
 $ opencc -i _Article__gossip_seg.txt -o Article_gossip_seg_zhtw.txt -c s2tw.json
