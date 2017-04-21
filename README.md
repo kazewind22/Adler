@@ -37,5 +37,5 @@ $ python3 corpus.py --hot
 $ opencc -i _Article__gossip_seg.txt -o Article_gossip_seg_zhtw.txt -c s2tw.json
 $ python3 train.py
 
-6. Similarity demo
+6. [Demo]
 $ python3 similarity.py
